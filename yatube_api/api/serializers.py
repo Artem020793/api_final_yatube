@@ -11,8 +11,8 @@ class PostSerializer(serializers.ModelSerializer):
     class Meta:
         fields = '__all__'
         model = Post
-        
-        
+
+
 class GroupSerializer(serializers.ModelSerializer):
 
     class Meta:
@@ -40,7 +40,7 @@ class FollowSerializer(serializers.ModelSerializer):
         queryset=User.objects.all(),
         slug_field='username',
     )
-    
+
     class Meta:
         fields = '__all__'
         model = Follow

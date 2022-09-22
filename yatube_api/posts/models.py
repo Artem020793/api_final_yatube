@@ -38,12 +38,12 @@ class Comment(models.Model):
     text = models.TextField()
     created = models.DateTimeField(
         'Дата добавления', auto_now_add=True, db_index=True)
-    
+
     def __str__(self):
         return '"{}" to post "{}" by author "{}"'.format(self.text,
                                                          self.post,
                                                          self.author)
-    
+
 
 class Follow(models.Model):
     user = models.ForeignKey(
@@ -60,9 +60,10 @@ class Follow(models.Model):
     class Meta:
         constraints = [
             models.UniqueConstraint(
-                fields=['user','following'],
+                fields=['user', 'following'],
                 name='unique_follow'
             )
         ]
+
     def __str__(self):
         return f'{self.user.username} подписался на {self.following.username}'
