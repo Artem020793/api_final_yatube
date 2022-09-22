@@ -6,12 +6,11 @@ from rest_framework.pagination import LimitOffsetPagination
 from posts.models import Group, Post, User
 from .permissions import IsOwnerOrReadOnly
 from .serializers import (CommentSerializer,
-                          GroupSerializer, 
+                          GroupSerializer,
                           PostSerializer,
                           FollowSerializer)
 
 from django_filters.rest_framework import DjangoFilterBackend
-from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
 
 class PostViewSet(viewsets.ModelViewSet):
@@ -50,7 +49,7 @@ class CommentViewSet(viewsets.ModelViewSet):
         post = get_object_or_404(Post, pk=self.kwargs.get('post_id'))
         return post.comments.all()
 
-    
+
 class FollowViewSet(viewsets.ModelViewSet):
     serializer_class = FollowSerializer
     permission_classes = (permissions.IsAuthenticated,)
