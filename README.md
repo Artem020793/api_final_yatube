@@ -11,9 +11,9 @@ source env/bin/activate
 
 python3 -m pip install --upgrade pip
 pip install -r requirements.txt
+
 Выполнить миграции:
-
 python3 manage.py migrate
-Запустить проект:
 
+Запустить проект:
 python3 manage.py runserver
