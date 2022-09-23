@@ -3,17 +3,17 @@
 ### Как запустить проект:
 Клонировать репозиторий и перейти в него в командной строке:
 ```
-git@github.com:Parker-ink/api_final_yatube.git
+https://github.com/Artem020793/api_final_yatube
 ```
 ```
 cd api_final_yatube
 ```
 Cоздать и активировать виртуальное окружение:
 ```
-python -m venv env
+python -m venv venv
 ```
 ```
-. venv/scripts/activate
+. venv/Scripts/activate
 ```
 ```
 python -m pip install --upgrade pip
